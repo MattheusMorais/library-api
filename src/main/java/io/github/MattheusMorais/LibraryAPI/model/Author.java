@@ -1,7 +1,10 @@
 package io.github.MattheusMorais.LibraryAPI.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,10 +14,13 @@ import java.util.UUID;
 
 @Entity
 @Table(name="author", schema = "public")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name="id")
     private UUID id;
 
@@ -22,29 +28,25 @@ public class Author {
     private String name;
 
     @Column(name = "birth_date", nullable = false)
-    private LocalDate birth_date;
+    private LocalDate birthDate;
 
     @Column(name = "nationality", length = 50, nullable = false)
     private String nationality;
 
     @Column(name = "post_date")
-    private LocalDateTime post_date;
+    private LocalDateTime postDate;
 
     @Column(name = "update_date")
-    private LocalDateTime update_date;
+    private LocalDateTime updateDate;
 
     @OneToMany(mappedBy = "author")
     private List<Book> books = new ArrayList<>();
 
-    @Deprecated
-    public Author() {
-    }
-
-    public Author(String name, LocalDate birth_date, String nationality, LocalDateTime post_date, LocalDateTime update_date) {
+    public Author(String name, LocalDate birthDate, String nationality, LocalDateTime postDate, LocalDateTime updateDate) {
         this.name = name;
-        this.birth_date = birth_date;
+        this.birthDate = birthDate;
         this.nationality = nationality;
-        this.post_date = post_date;
-        this.update_date = update_date;
+        this.postDate = postDate;
+        this.updateDate = updateDate;
     }
 }

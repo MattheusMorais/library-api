@@ -1,17 +1,23 @@
 package io.github.MattheusMorais.LibraryAPI.model;
 
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Table(name = "book")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private UUID id;
 
     @Column(name = "isbn", unique = true, nullable = false)
@@ -20,8 +26,8 @@ public class Book {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "published_data", nullable = false)
-    private LocalDateTime published_data;
+    @Column(name = "published_date", nullable = false)
+    private LocalDate publishedDate;
 
     @Column(name = "genre", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -31,27 +37,22 @@ public class Book {
     private BigDecimal price;
 
     @Column(name = "register_date")
-    private LocalDateTime register_date;
+    private LocalDateTime registerDate;
 
     @Column(name = "update_date")
-    private LocalDateTime update_date;
+    private LocalDateTime updateDate;
 
     @ManyToOne
-    @JoinColumn(name="author_id")
+    @JoinColumn(name="author_id", nullable = false)
     private Author author;
 
-    @Deprecated
-    public Book() {
-    }
-
-    @Autowired
-    public Book(String isbn, String title, LocalDateTime published_data, BooksGenres genre, BigDecimal price, LocalDateTime register_date, LocalDateTime update_date) {
+    public Book(String isbn, String title, LocalDate publishedDate, BooksGenres genre, BigDecimal price, LocalDateTime registerDate, LocalDateTime updateDate) {
         this.isbn = isbn;
         this.title = title;
-        this.published_data = published_data;
+        this.publishedDate = publishedDate;
         this.genre = genre;
         this.price = price;
-        this.register_date = register_date;
-        this.update_date = update_date;
+        this.registerDate = registerDate;
+        this.updateDate = updateDate;
     }
 }
