@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: LibraryAPI
+  profiles:
+    active: dev
