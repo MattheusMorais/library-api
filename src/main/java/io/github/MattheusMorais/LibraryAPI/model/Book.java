@@ -42,7 +42,10 @@ public class Book {
     @Column(name = "update_date")
     private LocalDateTime updateDate;
 
-    @ManyToOne
+    @ManyToOne(
+//            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     @JoinColumn(name="author_id", nullable = false)
     private Author author;
 

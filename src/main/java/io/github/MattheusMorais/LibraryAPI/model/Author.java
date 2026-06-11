@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,7 +16,6 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 public class Author {
     @Id
     @GeneratedValue
@@ -40,7 +38,7 @@ public class Author {
     private LocalDateTime updateDate;
 
     @OneToMany(mappedBy = "author")
-    private List<Book> books = new ArrayList<>();
+    private List<Book> books;
 
     public Author(String name, LocalDate birthDate, String nationality, LocalDateTime postDate, LocalDateTime updateDate) {
         this.name = name;
