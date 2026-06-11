@@ -35,8 +35,8 @@ public interface BookRepository extends JpaRepository<Book, UUID> {
     List<Book> findByPublishedDateBetween(LocalDate start, LocalDate end);
 
     // JPQL -> referencia as entidades e as propriedades
-    // select l.* from livro as l order by l.titulo
-    @Query(" select l from Book as l order by l.titulo, l.preco ")
+    // select l.* from livro as l order by l.title
+    @Query(" select l from Book as l order by l.title, l.price ")
     List<Book> listarTodosOrdenadoPorTituloAndPreco();
 
     /**
@@ -48,7 +48,7 @@ public interface BookRepository extends JpaRepository<Book, UUID> {
     List<Author> listBooksAuthor();
 
     // select distinct l.* from livro l
-    @Query("select distinct l.titulo from Book l")
+    @Query("select distinct l.title from Book l")
     List<String> listDifferentsBooksNames();
 
     // named parameters -> parametros nomeados
