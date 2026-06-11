@@ -1,5 +1,6 @@
 package io.github.MattheusMorais.LibraryAPI.service;
 
+import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.model.Book;
 import io.github.MattheusMorais.LibraryAPI.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,13 @@ public class BookService {
     public Book findById(UUID id) {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found"));
+    }
+
+    public List<Book> findBooksByAuthor(Author author) {
+        List<Book> booksList = bookRepository.findByAuthor(author);
+        author.setBooks(booksList);
+        author.getBooks().forEach(System.out::println);
+        return booksList;
     }
 
     public Book insert(Book book){return bookRepository.save(book);}
