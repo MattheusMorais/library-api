@@ -17,48 +17,32 @@ import java.util.UUID;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, UUID> {
-//Query Methods
 
-    // SELECT * FROM Book WHERE author_id = id
     List<Book> findByAuthor(Author author);
 
-    // SELECT * FROM Book WHERE title = title
     Book findByTitle(String title);
 
-    // SELECT * FROM Book WHERE genre = genre
     List<Book> findByGenre(BooksGenres genre);
 
-    // SELECT * FROM Book WHERE title = ? and price = ?
     List<Book> findByTitleAndPrice(String title, BigDecimal price);
 
-    // SELECT * FROM Book WHERE published_date between ? and ?
     List<Book> findByPublishedDateBetween(LocalDate start, LocalDate end);
 
-    // JPQL -> referencia as entidades e as propriedades
-    // select l.* from livro as l order by l.title
     @Query(" select l from Book as l order by l.title, l.price ")
     List<Book> listarTodosOrdenadoPorTituloAndPreco();
 
-    /**
-     * select a.*
-     * from livro l
-     * join author a on a.id = l.id_author
-     */
     @Query("select a from Book l join l.author a ")
     List<Author> listBooksAuthor();
 
-    // select distinct l.* from livro l
     @Query("select distinct l.title from Book l")
     List<String> listDifferentsBooksNames();
 
-    // named parameters -> parametros nomeados
     @Query("select l from Book l where l.genre = :genre order by :paramOrdenacao ")
     List<Book> findByGenre(
             @Param("genre") BooksGenres genre,
             @Param("paramOrdenacao") String propertyName
     );
 
-    // positional parameters
     @Query("select l from Book l where l.genre = ?2 order by ?1 ")
     List<Book> findByGenrePositionalParameters(String propertyName, BooksGenres genre);
 
@@ -72,5 +56,6 @@ public interface BookRepository extends JpaRepository<Book, UUID> {
     @Query(" update Book set publishedDate = ?1 ")
     void updatePublishedDate(LocalDate newDate);
 
+    boolean existsByAuthorId(UUID uuid);
 
 }
