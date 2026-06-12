@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +18,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
+@EntityListeners(EnableJpaAuditing.class)
 public class Author {
     @Id
     @GeneratedValue
@@ -31,9 +34,11 @@ public class Author {
     @Column(name = "nationality", length = 50, nullable = false)
     private String nationality;
 
+    @CreatedDate
     @Column(name = "post_date")
     private LocalDateTime postDate;
 
+    @LastModifiedDate
     @Column(name = "update_date")
     private LocalDateTime updateDate;
 
