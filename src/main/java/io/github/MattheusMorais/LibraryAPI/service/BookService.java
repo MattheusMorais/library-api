@@ -3,21 +3,18 @@ package io.github.MattheusMorais.LibraryAPI.service;
 import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.model.Book;
 import io.github.MattheusMorais.LibraryAPI.repository.BookRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class BookService {
 
     private final BookRepository bookRepository;
-
-    @Autowired
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     public List<Book> findAll(){return bookRepository.findAll();}
 

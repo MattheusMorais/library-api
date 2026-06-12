@@ -5,20 +5,17 @@ import io.github.MattheusMorais.LibraryAPI.exceptions.DuplicateRegisterException
 import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.repository.AuthorRepository;
 import io.github.MattheusMorais.LibraryAPI.repository.BookRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Component
 public class AuthorValidator {
 
-    private AuthorRepository authorRepository;
+    private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
-
-    public AuthorValidator(AuthorRepository authorRepository, BookRepository bookRepository) {
-        this.authorRepository = authorRepository;
-        this.bookRepository = bookRepository;
-    }
 
     public void validateInsert(Author author) {
         boolean exists = authorRepository.existsByNameAndBirthDateAndNationality(

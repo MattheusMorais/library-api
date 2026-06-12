@@ -3,23 +3,19 @@ package io.github.MattheusMorais.LibraryAPI.service;
 import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.repository.AuthorRepository;
 import io.github.MattheusMorais.LibraryAPI.validator.AuthorValidator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class AuthorService {
 
     private final AuthorRepository authorRepository;
     private final AuthorValidator authorValidator;
-
-    @Autowired
-    public AuthorService(AuthorRepository authorRepository, AuthorValidator authorValidator) {
-        this.authorRepository = authorRepository;
-        this.authorValidator = authorValidator;
-    }
 
     public List<Author> findAll(){return authorRepository.findAll();}
 

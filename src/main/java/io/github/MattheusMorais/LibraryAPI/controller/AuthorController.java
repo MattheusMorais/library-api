@@ -7,6 +7,7 @@ import io.github.MattheusMorais.LibraryAPI.exceptions.DeleteException;
 import io.github.MattheusMorais.LibraryAPI.exceptions.DuplicateRegisterException;
 import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.service.AuthorService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -15,15 +16,12 @@ import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/authors")
 public class AuthorController {
 
     private final AuthorService authorService;
-
-    public AuthorController(AuthorService authorService) {
-        this.authorService = authorService;
-    }
 
     @PostMapping
     public ResponseEntity<Object> insert(@RequestBody AuthorDTO authorDTO) {
