@@ -7,6 +7,7 @@ import io.github.MattheusMorais.LibraryAPI.exceptions.DeleteException;
 import io.github.MattheusMorais.LibraryAPI.exceptions.DuplicateRegisterException;
 import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.service.AuthorService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class AuthorController {
     private final AuthorService authorService;
 
     @PostMapping
-    public ResponseEntity<Object> insert(@RequestBody AuthorDTO authorDTO) {
+    public ResponseEntity<Object> insert(@RequestBody @Valid AuthorDTO authorDTO) {
         try {
             Author authorEntity = authorDTO.mapToEntity();
             authorService.insert(authorEntity);
@@ -56,7 +57,7 @@ public class AuthorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateAuthor(@PathVariable String id, @RequestBody AuthorDTO authorDTO) {
+    public ResponseEntity<Object> updateAuthor(@PathVariable String id, @RequestBody @Valid AuthorDTO authorDTO) {
         try {
             Author authorToUpdate = authorService.findById(UUID.fromString(id));
             authorToUpdate.setName(authorDTO.name());
