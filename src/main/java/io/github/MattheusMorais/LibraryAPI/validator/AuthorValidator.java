@@ -48,8 +48,5 @@ public class AuthorValidator {
         if(existsAuthorWithBook) {
             throw new DeleteException("Não é possível excluir! Autor possui livros.");
         }
-
     }
-
-
 }

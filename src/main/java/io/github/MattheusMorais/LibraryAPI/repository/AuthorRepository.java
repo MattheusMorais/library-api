@@ -2,12 +2,10 @@ package io.github.MattheusMorais.LibraryAPI.repository;
 
 
 import io.github.MattheusMorais.LibraryAPI.model.Author;
-import io.github.MattheusMorais.LibraryAPI.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
-
 import java.util.List;
 import java.util.UUID;
 
