@@ -3,7 +3,6 @@ package io.github.MattheusMorais.LibraryAPI.controller.common;
 import io.github.MattheusMorais.LibraryAPI.dto.error.AnswerErrorDTO;
 import io.github.MattheusMorais.LibraryAPI.dto.error.FieldErrorDTO;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
