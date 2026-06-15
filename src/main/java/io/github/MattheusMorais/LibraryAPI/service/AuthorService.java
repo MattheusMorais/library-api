@@ -4,7 +4,6 @@ import io.github.MattheusMorais.LibraryAPI.model.Author;
 import io.github.MattheusMorais.LibraryAPI.repository.AuthorRepository;
 import io.github.MattheusMorais.LibraryAPI.validator.AuthorValidator;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,7 +46,7 @@ public class AuthorService {
 
     public List<Author> findByNameAndNationality(String name, String nationality) {
         if (name!= null && nationality!= null) {
-            return authorRepository.findAll();
+            return authorRepository.findByNameAndNationality(name, nationality);
         }
 
         if (name!=null) {
@@ -58,6 +57,6 @@ public class AuthorService {
             return authorRepository.findByNationality(nationality);
         }
 
-        return authorRepository.findByNameAndNationality(name, nationality);
+        return authorRepository.findAll();
     }
 }
