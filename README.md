@@ -59,15 +59,15 @@ A aplicação segue uma arquitetura desacoplada, facilitando testes, manutençã
 
 <div align="center">
 
-![Java][Java]
-![SpringBoot][SpringBoot]
-![SpringData][SpringData]
-![PostgreSQL][PostgreSQL]
-![Docker][Docker]
-![Maven][Maven]
-![JUnit][JUnit]
-![Swagger][Swagger]
-![IntelliJ][IntelliJ]
+[![Java][Java]][Java-url]
+[![Spring Boot][SpringBoot]][SpringBoot-url]
+[![Spring Data JPA][SpringData]][SpringData-url]
+[![PostgreSQL][PostgreSQL]][PostgreSQL-url]
+[![Docker][Docker]][Docker-url]
+[![Maven][Maven]][Maven-url]
+[![JUnit][JUnit]][JUnit-url]
+[![OpenAPI][Swagger]][Swagger-url]
+[![IntelliJ][IntelliJ]][IntelliJ-url]
 
 </div>
 
@@ -281,33 +281,40 @@ https://matheus-morais.vercel.app
 
 ---
 
-## Badges
-
-```md
-[issues-shield]: https://img.shields.io/github/issues/MattheusMorais/library-api.svg?style=for-the-badge
-[issues-url]: https://github.com/MattheusMorais/library-api/issues
-
-[license-shield]: https://img.shields.io/github/license/MattheusMorais/library-api.svg?style=for-the-badge
-[license-url]: https://github.com/MattheusMorais/library-api/blob/main/LICENSE
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/mattheus-morais/
+<!-- MARKDOWN LINKS & IMAGES -->
 
 [Java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 
+[Java-url]: https://www.java.com/
+
 [SpringBoot]: https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
 
-[SpringData]: https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge
+[SpringBoot-url]: https://spring.io/projects/spring-boot
+
+[SpringData]: https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white
+
+[SpringData-url]: https://spring.io/projects/spring-data-jpa
 
 [PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 
+[PostgreSQL-url]: https://www.postgresql.org/
+
 [Docker]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
 
-[Maven]: https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white
+[Docker-url]: https://www.docker.com/
 
-[JUnit]: https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white
+[Maven]: https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white
 
-[Swagger]: https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black
+[Maven-url]: https://maven.apache.org/
 
-[IntelliJ]: https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white
-```
+[JUnit]: https://img.shields.io/badge/JUnit_5-25A162?style=for-the-badge&logo=junit5&logoColor=white
+
+[JUnit-url]: https://junit.org/
+
+[IntelliJ]: https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white
+
+[IntelliJ-url]: https://www.jetbrains.com/idea/
+
+[Swagger]: https://img.shields.io/badge/OpenAPI-6BA539?style=for-the-badge&logo=swagger&logoColor=white
+
+[Swagger-url]: https://swagger.io/
