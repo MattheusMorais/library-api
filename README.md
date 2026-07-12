@@ -283,6 +283,15 @@ https://matheus-morais.vercel.app
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
+[issues-shield]: https://img.shields.io/github/issues/MattheusMorais/bomberfox.svg?style=for-the-badge
+[issues-url]: https://github.com/MattheusMorais/bomberfox/issues
+
+[license-shield]: https://img.shields.io/github/license/MattheusMorais/bomberfox.svg?style=for-the-badge
+[license-url]: https://github.com/MattheusMorais/bomberfox/blob/main/LICENSE
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/mattheus-morais/
+
 [Java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 
 [Java-url]: https://www.java.com/
